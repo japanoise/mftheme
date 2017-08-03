@@ -1,0 +1,24 @@
+{{ partial "header" . }}
+<body>
+    {{ partial "nav" . }}
+    <h2>{{ .Title }}</h2>
+    {{ .Content }}
+    <hr>
+    
+    Posted in
+    {{ range $index, $category := .Params.categories }}{{ if gt $index 0 }}, {{ end }}<a href="{{ "categories/" | relURL }}{{ . | urlize }}">{{ . }}</a>{{end}}
+    on {{ .Date.Format "2006-01-02" }}.<br/>
+    
+    Tags:
+    {{ range $index, $tag := .Params.tags }}{{ if gt $index 0 }}, {{ end }}<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}
+    <br/>
+  {{ if .Next }}← <a class="right" href="{{ .Next.Permalink }}" rel="next">
+    <span>{{ .Next.Title }}</span>
+  </a><br/>
+  {{ end }}
+  {{ if .Prev }}→ <a class="left" href="{{ .Prev.Permalink }}" rel="prev">
+    <span>{{ .Prev.Title }}</span>
+  </a><br/>
+  {{ end }}
+</body>
+{{ partial "footer" . }}
