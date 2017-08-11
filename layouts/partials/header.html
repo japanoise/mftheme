@@ -8,6 +8,21 @@
 	<link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
 	{{ end }}
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="{{ .Summary }}">
+	<meta name="twitter:card" content="summary" />
+	{{ if .Site.Params.twitter }}
+	<meta name="twitter:site" content="{{ .Site.Params.twitter }}">
+	{{ end }}
+	<meta name="twitter:title" content="{{ .Title }}">
+	<meta name="twitter:description" content="{{ .Summary }}">
+	<meta property="og:type" content="article" />
+	<meta property="og:site_name" content="{{ .Site.Title }}">
+	<meta property="og:title" content="{{ .Title }}">
+	<meta property="og:description" content="{{ .Summary }}">
+	{{ if .Site.Params.logo }}
+	<meta property="og:image" content="{{ .Site.Params.logo }}">
+	<meta property="twitter:image" content="{{ .Site.Params.logo }}">
+	{{ end }}
 	<meta charset="utf-8">
 	<title>{{ .Title }}</title>
     </head>
