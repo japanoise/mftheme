@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html>
     <head>
+	<meta charset="utf-8">
+	<title>{{ .Title }}</title>
 	<link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/latest/normalize.css">
 	<link rel="stylesheet" href="{{ .Site.BaseURL }}/css/style.css">
 	{{ if .RSSLink }}
 	<link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
 	<link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
 	{{ end }}
+	{{ define "mfsummary"}}
+	gfhusaoeuh
+	{{ end }}
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="{{ .Summary }}">
+	<meta name="description" content="{{ partial "summary" .}}">
 	<meta name="twitter:card" content="summary" />
 	{{ if .Site.Params.twitter }}
 	<meta name="twitter:site" content="{{ .Site.Params.twitter }}">
 	{{ end }}
 	<meta name="twitter:title" content="{{ .Title }}">
-	<meta name="twitter:description" content="{{ .Summary }}">
+	<meta name="twitter:description" content="{{ partial "summary" . }}">
 	<meta property="og:type" content="article" />
 	<meta property="og:site_name" content="{{ .Site.Title }}">
 	<meta property="og:title" content="{{ .Title }}">
-	<meta property="og:description" content="{{ .Summary }}">
+	<meta property="og:description" content="{{ partial "summary" . }}">
 	{{ if .Site.Params.logo }}
 	<meta property="og:image" content="{{ .Site.Params.logo }}">
 	<meta property="twitter:image" content="{{ .Site.Params.logo }}">
 	{{ end }}
-	<meta charset="utf-8">
-	<title>{{ .Title }}</title>
     </head>
