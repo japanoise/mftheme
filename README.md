@@ -13,6 +13,7 @@ Ripped from the css on my main site.
 - Works the same on mobile and desktop
 - Link previews for social media (confirmed to work on discord, might also work
   elsewhere, but has not been tested)
+- Optimised for Firefox Reader mode
 
 ## Customization
 

@@ -37,10 +37,17 @@ a:link{
 #navbar{
 	text-align: center;
 }
-h1{
-	text-align: center;
+div.site-title{
+    text-align: center;
+    display: block;
+    font-size: 2em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
 }
-h1,h2,h3,h4{
+h1,h2,h3,h4,div.site-title{
 	line-height:1.2;
 	font-family:sans-serif;
 }
