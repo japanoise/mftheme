@@ -2,9 +2,12 @@
 <body>
     {{ partial "nav" . }}
     <ul>
-	{{ range .Data.Pages }}
+	{{ range .Paginator.Pages }}
 	<li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
 	{{ end }}
     </ul>
+    <div class="center">
+    {{ template "_internal/pagination.html" . }}
+    </div>
 </body>
 {{ partial "footer" . }}
